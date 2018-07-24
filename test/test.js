@@ -24,9 +24,3 @@ function countdown() {
     }
   tick();
 }
-
-// countdown();
-
-// <div>
-//	<input type='number' id ='sec' placeholder='Number of seconds'/>
-// </div>
