@@ -9,19 +9,6 @@ chrome.runtime.onInstalled.addListener(function() {
     console.log("The color is green.");
   });
 
-<<<<<<< HEAD
-//Storage Sync
-// chrome.storage.sync.set({key: value}, function() {
-//           console.log('Value is set to ' + value);
-//         });
-//
-//         chrome.storage.sync.get(['key'], function(result) {
-//           console.log('Value currently is ' + result.key);
-//         });
-
-
-=======
->>>>>>> 305317e66e151e0b41d22868aa89d6c4f6f8359d
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
       chrome.declarativeContent.onPageChanged.addRules([{
         conditions: [
