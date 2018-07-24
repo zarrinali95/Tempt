@@ -2,7 +2,7 @@
   "name": "Tempt",
   "version": "1.0",
   "description": "Track how much time you spend on websites",
-  "permissions": ["activeTab", "declarativeContent", "storage", "permissions"],
+  "permissions": ["activeTab", "declarativeContent", "storage"],
   "content_scripts": [{
   "matches": ["https://*/*"],
     "js": ["content.js"]

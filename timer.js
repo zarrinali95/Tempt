@@ -1,26 +1,45 @@
-var timeoutHandle;
-function countdown() {
-    var seconds = 60;
-    var mins = document.getElementById('min');
-    var num_min = Number(mins.value);
-    function tick() {
-        var counter = document.getElementById("timer");
-        var current_minutes = num_min-1
-        seconds--;
 
-        counter.innerHTML =
-        current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+var mins=0
+var njum_mins=0;
+var counter =0;
+var current_minutes =0;
+var seconds = 0;
 
-        if( seconds > 0 ) {
-            timeoutHandle=setTimeout(tick, 1000);
-        } else {
+window.onload = function() {
+  console.log("This works")
+  document.addEventListener('click', function () {
 
-            if(mins > 1){
+        document.getElementById('timerButton').addEventListener('click', reset);
 
-         setTimeout(function () { countdown(mins - 1); }, 1000);
+      });
 
-            }
+};
+
+
+
+
+function reset(){
+  mins = document.getElementById('min');
+  num_min = Number(mins.value);
+  counter = document.getElementById("timer");
+  current_minutes = num_min-1;
+  seconds = 60;
+  tick();
+}
+function tick() {
+
+    seconds-=1;
+
+    counter.innerHTML =
+    current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+
+    if( seconds > 0 ) {
+        setTimeout(tick, 1000);
+    } else {
+
+        if(mins > 1){
+     setTimeout(function () { countdown(mins - 1); }, 1000);
+
         }
     }
-  tick();
 }
