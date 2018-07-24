@@ -9,6 +9,26 @@ chrome.runtime.onInstalled.addListener(function() {
     console.log("The color is green.");
 
   });
+
+  chrome.browserAction.onClicked.addListener(function() {
+  alert('Hello, World!');
+  })
+
+  var min = 1;
+var max = 5;
+var current = min;
+
+function updateIcon() {
+  chrome.browserAction.setIcon({path:"icon" + current + ".png"});
+  current++;
+
+  if (current > max)
+    current = min;
+}
+
+chrome.browserAction.onClicked.addListener(updateIcon);
+updateIcon();
+
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
       chrome.declarativeContent.onPageChanged.addRules([{
         conditions: [new chrome.declarativeContent.PageStateMatcher({
