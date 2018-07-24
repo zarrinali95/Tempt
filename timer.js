@@ -40,22 +40,7 @@ function pause(){
 function disbaleStart() {
     document.getElementById("timerButton").disabled = true;
 }
-<<<<<<< HEAD
 
-function tick() {
-    seconds-=1;
-    mins-=1;
-    counter.innerHTML =
-    current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-    if( seconds > 0 ) {
-        setTimeout(tick, 1000);
-    } else {
-        min-=1;
-        seconds = 59
-        tick();
-      }
-    }
-=======
 function tick() {
     if (pauseBool==true){
       return true;
@@ -76,10 +61,9 @@ function tick() {
         if( seconds > 0 ) {
             setTimeout(tick, 1000);
         } else {
-
-            if(mins > 1){
-         setTimeout(function () { countdown(mins - 1); }, 1000);
-
+            num_min-=1;
+            seconds = 59;
+            tick();
             }
 
       }
