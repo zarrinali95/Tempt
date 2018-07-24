@@ -1,5 +1,5 @@
 
-var mins=0
+var mins=0;
 var njum_mins=0;
 var counter =0;
 var current_minutes =0;
@@ -8,15 +8,9 @@ var seconds = 0;
 window.onload = function() {
   console.log("This works")
   document.addEventListener('click', function () {
-
-        document.getElementById('timerButton').addEventListener('click', reset);
-
-      });
-
+  document.getElementById('timerButton').addEventListener('click', reset);
+});
 };
-
-
-
 
 function reset(){
   mins = document.getElementById('min');
@@ -26,20 +20,17 @@ function reset(){
   seconds = 60;
   tick();
 }
+
 function tick() {
-
     seconds-=1;
-
+    mins-=1;
     counter.innerHTML =
     current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-
     if( seconds > 0 ) {
         setTimeout(tick, 1000);
     } else {
-
-        if(mins > 1){
-     setTimeout(function () { countdown(mins - 1); }, 1000);
-
-        }
+        min-=1;
+        seconds = 59
+        tick();
+      }
     }
-}

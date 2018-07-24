@@ -19,6 +19,15 @@ chrome.runtime.onInstalled.addListener(function() {
             pageUrl: {hostEquals: 'drive.google.com'},
         }),
           new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: {hostEquals: 'docs.google.com'},
+       }),
+         new chrome.declarativeContent.PageStateMatcher({
+           pageUrl: {hostEquals: 'slides.google.com'},
+       }),
+         new chrome.declarativeContent.PageStateMatcher({
+           pageUrl: {hostEquals: 'sheets.google.com'},
+      }),
+          new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {hostEquals: 'www.facebook.com'},
         }),
           new chrome.declarativeContent.PageStateMatcher({
