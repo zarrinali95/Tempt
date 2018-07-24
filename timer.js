@@ -42,10 +42,14 @@ function pause(){
     tick();
   }
 }
+function disbaleStart() {
+    document.getElementById("timerButton").disabled = true;
+}
 function tick() {
     if (pauseBool==true){
       return true;
     }
+    disbaleStart();
       mins = document.getElementById('min');
       num_min = Number(mins.value);
       counter = document.getElementById("timer");
