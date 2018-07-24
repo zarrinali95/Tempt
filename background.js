@@ -9,20 +9,23 @@ chrome.runtime.onInstalled.addListener(function() {
     console.log("The color is green.");
   });
 
-//Storage Sync
-chrome.storage.sync.set({key: value}, function() {
-          console.log('Value is set to ' + value);
-        });
-
-        chrome.storage.sync.get(['key'], function(result) {
-          console.log('Value currently is ' + result.key);
-        });
-
-
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
       chrome.declarativeContent.onPageChanged.addRules([{
-        conditions: [new chrome.declarativeContent.PageStateMatcher({
-          pageUrl: {hostEquals: 'developer.chrome.com'},
+        conditions: [
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: {hostEquals: 'developer.chrome.com'},
+        }),
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: {hostEquals: 'drive.google.com'},
+        }),
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: {hostEquals: 'www.facebook.com'},
+        }),
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: {hostEquals: 'wwww.youtube.com'},
+        }),
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: {hostEquals: 'www.instagram.com'},
         })
         ],
             actions: [new chrome.declarativeContent.ShowPageAction()]
