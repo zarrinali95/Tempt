@@ -1,19 +1,32 @@
+var timeoutHandle;
+function countdown() {
+    var seconds = 60;
+    var mins = document.getElementById('min');
+    var num_min = Number(mins.value);
+    function tick() {
+        var counter = document.getElementById("timer");
+        var current_minutes = num_min-1
+        seconds--;
 
-var num = document.getElementById('minutes');
-debugger;
-function time_convert(num)
- {
-  var hours = Math.floor(num / 60);
-  var minutes = num % 60;
-  var time = hours + ":" + minutes;
-  return time;
+        counter.innerHTML =
+        current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+
+        if( seconds > 0 ) {
+            timeoutHandle=setTimeout(tick, 1000);
+        } else {
+
+            if(mins > 1){
+
+         setTimeout(function () { countdown(mins - 1); }, 1000);
+
+            }
+        }
+    }
+  tick();
 }
 
-var min = time_convert(num)
+// countdown();
 
-function startTimer(){
-  ticks = Number(min.value)
-  for(var i = ticks; i >= 0; i--){
-      console.log(i);
-  }
-};
+// <div>
+//	<input type='number' id ='sec' placeholder='Number of seconds'/>
+// </div>
