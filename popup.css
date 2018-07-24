@@ -1,0 +1,22 @@
+body{
+  background-color: lightblue;
+}
+.grandparent{
+  height:700px;
+  width: 400px;
+}
+.red{
+  background-color: lightgreen;
+}
+.quicksand{
+  font-family: 'Quicksand', sans-serif;
+}
+#headPadding{
+  padding-top: 20px;
+  padding-bottom: 15px;
+  font-size: 30px;
+}
+.textbox{
+  display:flex;
+  justify-content: space-evenly
+}

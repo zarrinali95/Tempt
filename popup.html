@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <body>
-      <h1>Please enter a task and an allotted time:</h1>
-      <h4>This will be your productivity timer</h4>
-      <form method = "post">
-        <div>
-          <input type = "text" name = "task" placeholder = "Your task for today"/>
-        </div>
-        <div>
-          <input type="number" name="points" step="2" placeholder = "The time allotted in mins"/>
-        </div>
-        <button type = "submit"> Start the timer! </button>
-      </form>
+    <head>
+      <link rel="stylesheet" type="text/css" href="popup.css">
+      <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    </head>
+    <body class="">
+      <div class="grandparent red quicksand">
+        <nav><h1 id="headPadding" style="display:flex; justify-content: center;border-bottom: 1px solid gray;"> Tempt </h1></nav>
+
+        <form method = "post">
+          <div class="textbox">
+            <input type = "text" name = "task" placeholder = "Your task for today"/>
+            <input type="number" name="points" step="2" placeholder = "The time allotted in mins"/>
+            <button type="submit"onclick="buttonPressed()"> Start the timer! </button>
+          </div>
+
+        </form>
+
+
+</div>
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+      <script src="content.js"> </script>
+      <script src="timer.js"> </script>
+      <script src="buttonPressed.js"> </script>
     </body>
 </html>
 <!--html comment-->
