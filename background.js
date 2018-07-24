@@ -22,13 +22,16 @@ chrome.runtime.onInstalled.addListener(function() {
             pageUrl: {hostEquals: 'www.facebook.com'},
         }),
           new chrome.declarativeContent.PageStateMatcher({
-            pageUrl: {hostEquals: 'wwww.youtube.com'},
+            pageUrl: {hostEquals: 'www.youtube.com'},
         }),
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {hostEquals: 'www.instagram.com'},
+        }),
+        new chrome.declarativeContent.PageStateMatcher({
+          pageUrl: {hostEquals: 'www.twitter.com'},
         })
         ],
-            actions: [new chrome.declarativeContent.ShowPageAction()]
+          actions: [new chrome.declarativeContent.ShowPageAction()]
       }]);
     });
 });
