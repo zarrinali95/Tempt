@@ -13,11 +13,14 @@ body{
   width: 500px;
 }
 .taskBox{
+
 }
 .clockDOM{
   font-size: 30px
 }
-
+button{
+  padding: 12px 15px;
+}
 
 
 

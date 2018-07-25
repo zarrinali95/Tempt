@@ -24,13 +24,16 @@ function reset(){
 }
 
 function pause() {
+
   console.log("pause works")
   if (pauseBool==false){
     pauseBool=true;
+    document.getElementById("resetButton").disabled = true;
   }else{
     pauseBool=false;
   }
   if (pauseBool==false){
+    document.getElementById("resetButton").disabled = false;
     tick();
   }
 }
