@@ -54,9 +54,10 @@ function tick() {
 
       seconds--;
 
+    //  counter.innerHTML.style.color="lightgreen";
 
-      counter.innerHTML =
-      current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+      counter.innerHTML =current_minutes.toString()+ ":" +(seconds < 10 ? "0" : "") + String(seconds);
+      var testhtml=counter.innerHTML;
 
         if( seconds > 0 ) {
             setTimeout(tick, 1000);
