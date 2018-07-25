@@ -57,13 +57,23 @@ function tick() {
 
         if( seconds > 0 ) {
             setTimeout(tick, 1000);
+            console.log("chrome notifications");
         } else {
-          if(mins > 1){
+          if(mins >= 1){
  -         setTimeout(function () { countdown(mins - 1); }, 1000);
             num_min-=1;
             seconds = 59;
             tick();
-            }
+          } else {
+              let options = {
+                type : "basic",
+                title: "Tempt",
+                message: "Your time for this session is up",
+                iconUrl: "images/get_started32.png"
+              }
+              chrome.notifications.create(options);
+              console.log("notification works")
+          }
 
       }
 }
