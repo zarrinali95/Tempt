@@ -1,4 +1,3 @@
-
 var mins=0;
 var njum_mins=0;
 var counter =0;
@@ -9,13 +8,11 @@ var pressOnce=false;
 
 
 window.onload = function() {
-
   document.addEventListener('click', function () {
         document.getElementById('timerButton').addEventListener('click', tick);
         document.getElementById('resetButton').addEventListener('click', reset);
         document.getElementById('pauseButton').addEventListener('click', pause);
       });
-
 };
 
 function reset(){
@@ -37,7 +34,7 @@ function pause(){
     tick();
   }
 }
-function disbaleStart() {
+function disableStart() {
     document.getElementById("timerButton").disabled = true;
 }
 
@@ -45,16 +42,13 @@ function tick() {
     if (pauseBool==true){
       return true;
     }
-    disbaleStart();
+    disableStart();
       mins = document.getElementById('min');
       num_min = Number(mins.value);
       counter = document.getElementById("timer");
       current_minutes = num_min-1;
       console.log(seconds)
-
       seconds--;
-
-
       counter.innerHTML =
       current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
 
@@ -68,4 +62,3 @@ function tick() {
 
       }
 }
->>>>>>> dcce519ede23a574f2c12da930a38e67d9493ab0
