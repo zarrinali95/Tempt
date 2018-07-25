@@ -1,7 +1,4 @@
 body{
-  background-color: lightblue;
-}
-.red{
   background-color: lightgreen;
 }
 .quicksand{
@@ -13,24 +10,18 @@ body{
   width: 500px;
 }
 .taskBox{
+
 }
 .clockDOM{
   font-size: 30px
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+button{
+  background-color: #33adff;
+  padding: 10px 8px;
+  border:0px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 17px;
+}
 
 
 #headPadding{
