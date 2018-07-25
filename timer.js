@@ -61,6 +61,8 @@ function tick() {
         if( seconds > 0 ) {
             setTimeout(tick, 1000);
         } else {
+          if(mins > 1){
+ -         setTimeout(function () { countdown(mins - 1); }, 1000);
             num_min-=1;
             seconds = 59;
             tick();
@@ -68,4 +70,3 @@ function tick() {
 
       }
 }
->>>>>>> dcce519ede23a574f2c12da930a38e67d9493ab0

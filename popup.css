@@ -1,15 +1,41 @@
 body{
   background-color: lightblue;
 }
-.grandparent{
-  height:900px;
-  width: 500px;
-}
 .red{
   background-color: lightgreen;
 }
 .quicksand{
   font-family: 'Quicksand', sans-serif;
+}
+/*  Size of box */
+.grandparent{
+  height:900px;
+  width: 500px;
+}
+.taskBox{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#headPadding{
+  padding-top: 20px;
+  padding-bottom: 15px;
+  font-size: 30px;
 }
 input[type=text] {
     width: 40%;
@@ -19,7 +45,6 @@ input[type=text] {
     border: 1px solid #555;
     outline: none;
 }
-
 input[type=text]:focus {
     background-color: lightblue;
 }
@@ -31,15 +56,6 @@ input[type=number] {
     border: 1px solid #555;
     outline: none;
 }
-
 input[type=number]:focus {
     background-color: lightblue;
-}
-#headPadding{
-  padding-top: 20px;
-  padding-bottom: 15px;
-  font-size: 30px;
-}
-.textbox{
-
 }
