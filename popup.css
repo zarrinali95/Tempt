@@ -1,7 +1,4 @@
 body{
-  background-color: lightblue;
-}
-.red{
   background-color: lightgreen;
 }
 .quicksand{
@@ -19,7 +16,11 @@ body{
   font-size: 30px
 }
 button{
-  padding: 12px 15px;
+  background-color: #33adff;
+  padding: 10px 8px;
+  border:0px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 17px;
 }
 
 

@@ -13,7 +13,16 @@ window.onload = function() {
         document.getElementById('resetButton').addEventListener('click', reset);
         document.getElementById('pauseButton').addEventListener('click', pause);
       });
+      document.getElementById("resetButton").onclick = function run() {
+        textReset();
+      }
 };
+
+function textReset(){
+  document.getElementById('min').value = '';
+  document.getElementById('taskList').value = '';
+  console.log("textReset is working");
+}
 
 function reset(){
   mins = document.getElementById('min');
@@ -21,6 +30,7 @@ function reset(){
   counter = document.getElementById("timer");
   current_minutes = num_min-1;
   seconds = 60;
+
 }
 
 function pause() {
@@ -45,7 +55,7 @@ function tick() {
     if (pauseBool==true){
       return true;
     }
-    disableStart();
+     disableStart();
       mins = document.getElementById('min');
       num_min = Number(mins.value);
       counter = document.getElementById("timer");
