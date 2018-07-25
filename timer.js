@@ -49,12 +49,11 @@ function tick() {
       current_minutes = num_min-1;
       console.log(seconds)
       seconds--;
-<<<<<<< HEAD
 
     //  counter.innerHTML.style.color="lightgreen";
 
       counter.innerHTML =current_minutes.toString()+ ":" +(seconds < 10 ? "0" : "") + String(seconds);
-      var testhtml=counter.innerHTML;
+
 
         if( seconds > 0 ) {
             setTimeout(tick, 1000);
@@ -66,19 +65,5 @@ function tick() {
             tick();
             }
 
-=======
-      counter.innerHTML =
-      current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-      if( seconds > 0 ) {
-          setTimeout(tick, 1000);
-      }
-      else {
-        if(mins > 1){
- -        setTimeout(function () { countdown(mins - 1); }, 1000);
-          num_min-=1;
-          seconds = 59;
-          tick();
-        }
->>>>>>> c1c8c994e9f14ad79c19810ef3f5d6e3b17700d6
       }
 }
