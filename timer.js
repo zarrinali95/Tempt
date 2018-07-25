@@ -8,7 +8,6 @@ var pressOnce=false;
 
 window.onload = function() {
   document.addEventListener('click', function () {
-        document.getElementById('timerButton').addEventListener('click', tick);
         document.getElementById('resetButton').addEventListener('click', reset);
         document.getElementById('pauseButton').addEventListener('click', pause);
       });
@@ -29,16 +28,15 @@ function reset(){
   counter = document.getElementById("timer");
   current_minutes = num_min-1;
   seconds = 60;
-
 }
 
 function pause() {
-
   console.log("pause works")
   if (pauseBool==false){
     pauseBool=true;
     document.getElementById("resetButton").disabled = true;
-  }else{
+  }
+  else{
     pauseBool=false;
   }
   if (pauseBool==false){
@@ -46,27 +44,26 @@ function pause() {
     tick();
   }
 }
+
 function disableStart() {
     document.getElementById("timerButton").disabled = true;
 }
 
-function tick() {
+//our function
+/*function tick() {
     if (pauseBool==true){
       return true;
     }
      disableStart();
-      mins = document.getElementById('min');
-      num_min = Number(mins.value);
-      counter = document.getElementById("timer");
-      current_minutes = num_min-1;
-      console.log(seconds)
-      seconds--;
+     mins = document.getElementById('min');
+     num_min = Number(mins.value);
+     counter = document.getElementById("timer");
+     current_minutes = num_min-1;
+     console.log(seconds)
+     seconds--;
 
     //  counter.innerHTML.style.color="lightgreen";
-
       counter.innerHTML ='<span class="clockDOM">'+current_minutes.toString()+ ":" +(seconds < 10 ? "0" : "") + String(seconds)+'</span>';
-
-
         if( seconds > 0 ) {
             setTimeout(tick, 1000);
             console.log("chrome notifications");
@@ -88,4 +85,46 @@ function tick() {
           }
 
       }
+}*/
+
+//working model function
+var display;
+
+function ticks(duration) {
+  if (pauseBool==true){
+    return true;
+  }
+   disableStart(); //might need to put disable somewhere else {
+
+   var timer = getInputMinutes();
+   setInterval(function () {
+        var minutes = parseInt(timer / 60, 10);
+        var seconds = parseInt(timer % 60, 10);
+
+        var strMinutes = minutes < 10 ? "0" + minutes : minutes;
+        var strSeconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.innerHTML = strMinutes + ":" + strSeconds;
+
+        if (--timer < 0) {
+            timer = 0;
+        }
+    }, 1000);
 }
+//returns the seconds value of the number that the user inputs
+function getInputMinutes() {
+  input = document.getElementById("min");
+  return Number(input.value) * 60;
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('timerButton').addEventListener('click', () => ticks(userMinutes));
+  mins = document.getElementById("min");
+  num_min = Number(mins.value);
+  var userMinutes = 60 * num_min;
+  display = document.getElementById('timer');
+  // startTimer(userMinutes);
+});
+
+//counter.innerHTML ='<span class="clockDOM">'+current_minutes.toString()+ ":" +(seconds < 10 ? "0" : "") + String(seconds)+'</span>';
