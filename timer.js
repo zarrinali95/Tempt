@@ -23,7 +23,7 @@ function reset(){
   seconds = 60;
 }
 
-function pause(){
+function pause() {
   console.log("pause works")
   if (pauseBool==false){
     pauseBool=true;
@@ -51,16 +51,15 @@ function tick() {
       seconds--;
       counter.innerHTML =
       current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-
-        if( seconds > 0 ) {
-            setTimeout(tick, 1000);
-        } else {
-          if(mins > 1){
- -         setTimeout(function () { countdown(mins - 1); }, 1000);
-            num_min-=1;
-            seconds = 59;
-            tick();
-            }
-
+      if( seconds > 0 ) {
+          setTimeout(tick, 1000);
+      }
+      else {
+        if(mins > 1){
+ -        setTimeout(function () { countdown(mins - 1); }, 1000);
+          num_min-=1;
+          seconds = 59;
+          tick();
+        }
       }
 }

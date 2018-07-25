@@ -1,3 +1,4 @@
-if document.getElementById("timer") == "0:00" {
+var timerElement= document.querySelector("#timer");
+if timerElement.innerHTML == "0:00" {
   alert("Your time for this session is up!");
 }
