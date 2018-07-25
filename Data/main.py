@@ -12,15 +12,12 @@ class MainHandler(webapp2.RequestHandler):
         template = jinja_current_dir.get_template('popup.html')
         self.response.write(template.render())
 
-        
+
     def post(self):
-        cheese_input = self.request.get('cheese')
-        crust_input = self.request.get('crust')
+        task_input = self.request.get('task')
         template_vars = {
-            'cheese_answer': cheese_input,
-            'crust_answer': crust_input,
-            'sauce_answer': self.request.get('sauce')
+            'user_task': task_input,
         }
 
-        template = jinja_current_directory.get_template('templates/confirmation.html')
+        template = jinja_current_directory.get_template('popup.html')
         self.response.write(template.render(template_vars))
