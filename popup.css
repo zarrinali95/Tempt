@@ -2,8 +2,8 @@ body{
   background-color: lightblue;
 }
 .grandparent{
-  height:700px;
-  width: 600px;
+  height:900px;
+  width: 500px;
 }
 .red{
   background-color: lightgreen;
@@ -23,12 +23,23 @@ input[type=text] {
 input[type=text]:focus {
     background-color: lightblue;
 }
+input[type=number] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+}
+
+input[type=number]:focus {
+    background-color: lightblue;
+}
 #headPadding{
   padding-top: 20px;
   padding-bottom: 15px;
   font-size: 30px;
 }
 .textbox{
-  display:flex;
-  justify-content: space-evenly
+
 }
