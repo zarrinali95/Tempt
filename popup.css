@@ -13,9 +13,10 @@ body{
   width: 500px;
 }
 .taskBox{
-
 }
-
+.clockDOM{
+  font-size: 30px
+}
 
 
 

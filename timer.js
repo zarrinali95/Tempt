@@ -52,7 +52,7 @@ function tick() {
 
     //  counter.innerHTML.style.color="lightgreen";
 
-      counter.innerHTML =current_minutes.toString()+ ":" +(seconds < 10 ? "0" : "") + String(seconds);
+      counter.innerHTML ='<span class="clockDOM">'+current_minutes.toString()+ ":" +(seconds < 10 ? "0" : "") + String(seconds)+'</span>';
 
 
         if( seconds > 0 ) {
