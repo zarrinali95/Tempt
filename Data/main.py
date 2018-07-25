@@ -22,3 +22,6 @@ class MainHandler(webapp2.RequestHandler):
 
         template = jinja_current_directory.get_template('popup.html')
         self.response.write(template.render(template_vars))
+app = webapp2.WSGIApplication([
+    ('/', MainPage),
+], debug=True)
