@@ -1,5 +1,4 @@
 var mins=0;
-var njum_mins=0;
 var counter =0;
 var current_minutes =0;
 var seconds = 60;

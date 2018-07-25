@@ -8,9 +8,14 @@
       <div class="grandparent quicksand">
         <h1 id="headPadding" style="display:flex; justify-content: center;"> Tempt </h1>
           <div>
-          <div><input id='taskList'class= "quicksand" type = "text" name = "task" placeholder = "Your task for today" style="font-size: 15px" ></input></div>
-          <input type='number' id ='min' placeholder='Number of min' style="font-size: 15px" class= "quicksand"/>
-          <button  id="timerButton"class="startButton">Start</button>
+            <div>
+              <input id='taskList'class= "quicksand" type = "text" name = "task" placeholder = "Your task for today" style="font-size: 15px" ></input>
+            </div>
+            <div>
+              <input type='number' id ='min' placeholder='Number of min' style="font-size: 15px" class= "quicksand"/>
+            </div>
+            <div>
+          <button  id="timerButton"class="startButton" type="submit">Start</button>
           <button  id="resetButton" onclick="textReset()">Reset</button>
           <button  id="pauseButton">Pause</button>
           <div id='timer'></div>
