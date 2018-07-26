@@ -47,7 +47,7 @@ function pause() {
 }
 
 function disableStart() {
-    document.getElementById("timerButton").disabled = true;
+    document.getElementById("startButton").disabled = true;
 }
 
 //our function
@@ -92,26 +92,25 @@ function disableStart() {
 var display;
 
 function ticks(duration) {
-  if (pauseBool==true){
-    return true;
-  }
-   disableStart(); //might need to put disable somewhere else {
+
+   disableStart();
 
    var timer = getInputMinutes();
    setInterval(function () {
         var minutes = parseInt(timer / 60, 10);
         var seconds = parseInt(timer % 60, 10);
-        console.log("input min")
         var strMinutes = minutes < 10 ? "0" + minutes : minutes;
         var strSeconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.innerHTML = strMinutes + ":" + strSeconds;
-
+        display.innerHTML = '<span class="clockDOM">'+ strMinutes + ":" + strSeconds+'<span>';
+        
         if (--timer < 0) {
             timer = 0;
         }
     }, 1000);
 }
+
+
 //returns the seconds value of the number that the user inputs
 function getInputMinutes() {
   input = document.getElementById("min");
@@ -120,7 +119,8 @@ function getInputMinutes() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('timerButton').addEventListener('click', () => ticks(userMinutes));
+  document.getElementById('startButton').addEventListener('click', () => ticks(userMinutes));
+  // document.getElementById('pauseButton').addEventListener('click', () => pause);
   mins = document.getElementById("min");
   num_min = Number(mins.value);
   var userMinutes = 60 * num_min;
