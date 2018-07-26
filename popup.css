@@ -10,7 +10,14 @@ body{
   width: 300px;
 }
 
+#temptLogo{
+  width: 15%;
+  height: 15%;
+  position: relative;
+  top:-4px;
+  margin-right: 15px;
 
+}
 .taskBox{
 
 }
@@ -34,10 +41,21 @@ button:hover{
   color: white;
 
 }
+.spin{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 120px;
+    height: 120px;
 
-header{
-
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
 }
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 #headPadding{
   padding-top: 20px;
   padding-bottom: 15px;
