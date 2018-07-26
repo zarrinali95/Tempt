@@ -101,7 +101,7 @@ function ticks(duration) {
    setInterval(function () {
         var minutes = parseInt(timer / 60, 10);
         var seconds = parseInt(timer % 60, 10);
-
+        console.log("input min")
         var strMinutes = minutes < 10 ? "0" + minutes : minutes;
         var strSeconds = seconds < 10 ? "0" + seconds : seconds;
 
