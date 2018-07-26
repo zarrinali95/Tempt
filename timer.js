@@ -13,7 +13,10 @@ function CounterClockwise(){
   document.getElementById("temptLogo").classList.add("spinCounterClockwise");
   console.log("Counter clockwise");
 }
-
+function changeRotation(){
+  document.getElementsByID("temptLogo").classList.toggle("spinCounterClockwise");
+  console.log("Counter clockwise");
+}
 
 function textReset(){
   document.getElementById('min').value = '';
@@ -118,7 +121,9 @@ function ticks(duration) {
       display.innerHTML = '<span class="clockDOM redClock">'+ strMinutes + ":" + strSeconds+'<span>';
     }else{
       display.innerHTML = '<span class="clockDOM">'+ strMinutes + ":" + strSeconds+'<span>';
-      CounterClockwise();
+    }
+    if(minutes%2==0){
+      changeRotation;
     }
 
 
