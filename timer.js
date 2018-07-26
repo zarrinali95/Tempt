@@ -48,6 +48,7 @@ function pause() {
 
 function disableStart() {
     document.getElementById("startButton").disabled = true;
+    
 }
 
 //our function
@@ -103,7 +104,7 @@ function ticks(duration) {
         var strSeconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.innerHTML = '<span class="clockDOM">'+ strMinutes + ":" + strSeconds+'<span>';
-        
+
         if (--timer < 0) {
             timer = 0;
         }
