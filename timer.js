@@ -5,17 +5,6 @@ var seconds = 60;
 var pauseBool = false;
 var pressOnce=false;
 
-
-window.onload = function() {
-  document.addEventListener('click', function () {
-        document.getElementById('resetButton').addEventListener('click', reset);
-        document.getElementById('pauseButton').addEventListener('click', pause);
-      });
-      document.getElementById("resetButton").onclick = function run() {
-        textReset();
-      }
-};
-
 function textReset(){
   document.getElementById('min').value = '';
   document.getElementById('taskList').value = '';
@@ -32,7 +21,6 @@ function reset(){
 }
 
 function pause() {
-
   console.log("pause works")
   if (pauseBool==false){
     pauseBool=true;
@@ -95,7 +83,7 @@ function ticks(duration) {
   if (pauseBool==true){
     return true;
   }
-   disableStart(); //might need to put disable somewhere else {
+   disableStart(); //might need to put disable somewhere else
 
    var timer = getInputMinutes();
    setInterval(function () {
