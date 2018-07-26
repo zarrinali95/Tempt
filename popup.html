@@ -6,8 +6,12 @@
     </head>
     <body>
       <div class="grandparent quicksand">
-        <h1 id="headPadding" style="display:flex; justify-content: center;"> Tempt </h1>
+        <header id="headPadding" style="display:flex; justify-content: center;">
+          <img src="images/tempt128.png" id="temptLogo" class="spin"/>
+           Tempt
+         </header>
         <form method='post'>
+          <center>
           <div>
             <div>
               <input id='taskList'class= "quicksand" type = "text" name="task" placeholder = "Your task for today" style="font-size: 15px" ></input>
@@ -16,9 +20,10 @@
               <input type='number' id='min' placeholder='Number of min' name="time" style="font-size: 15px" class= "quicksand"/>
             </div>
             <div>
-          <button  id="timerButton"class="startButton" type="submit">Start</button>
+          <button  id="startButton"class="startButton" type="submit">Start</button>
           <button  id="resetButton" onclick="textReset()">Reset</button>
           <button  id="pauseButton">Pause</button>
+        </center>
         </form>
           <div id='timer'></div>
           </div>

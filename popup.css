@@ -1,5 +1,5 @@
 body{
-  background-color: lightgreen;
+  background-color: #1aff8c;
 }
 .quicksand{
   font-family: 'Quicksand', sans-serif;
@@ -7,7 +7,16 @@ body{
 /*  Size of box */
 .grandparent{
   height:900px;
-  width: 500px;
+  width: 300px;
+}
+
+#temptLogo{
+  width: 15%;
+  height: 15%;
+  position: relative;
+  top:-4px;
+  margin-right: 15px;
+
 }
 .taskBox{
 
@@ -16,19 +25,49 @@ body{
   font-size: 30px
 }
 button{
-  background-color: #33adff;
+  background-color: white;
+  color:#1aff88;
   padding: 10px 8px;
-  border:0px;
+  border:2px;
+  border-radius: 8px;
   font-family: 'Quicksand', sans-serif;
   font-size: 17px;
+  cursor:pointer;
+  opacity:1;
+  transition: .5s;
 }
+button:hover{
+  background-color: #00b356;
+  color: white;
 
+}
+.spin{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 120px;
+    height: 120px;
+
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 #headPadding{
   padding-top: 20px;
   padding-bottom: 15px;
   font-size: 30px;
+  background-color: #b3ffd7;
 }
+button:disabled {
+    opacity:.7;
+    background-color: white;
+    color:#1aff88;
+}
+
 input[type=text] {
     width: 90%;
     padding: 12px 20px;
@@ -36,17 +75,19 @@ input[type=text] {
     box-sizing: border-box;
     border: 1px solid #555;
     outline: none;
+    border-radius: 8px;
 }
 input[type=text]:focus {
     background-color: lightblue;
 }
 input[type=number] {
-    width: 50%;
+    width: 90%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: 1px solid #555;
-    outline: none;
+    outline: none ;
+    border-radius: 8px;
 }
 input[type=number]:focus {
     background-color: lightblue;
