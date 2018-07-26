@@ -5,6 +5,16 @@ var seconds = 60;
 var pauseBool = false;
 var pressOnce=false;
 
+function Clockwise(){
+  document.getElementById("temptLogo").classList.add("spinClockwise");
+  console.log("clockwise");
+}
+function CounterClockwise(){
+  document.getElementById("temptLogo").classList.add("spinCounterClockwise");
+  console.log("Counter clockwise");
+}
+
+
 function textReset(){
   document.getElementById('min').value = '';
   document.getElementById('taskList').value = '';
@@ -103,7 +113,15 @@ function ticks(duration) {
      var strMinutes = minutes < 10 ? "0" + minutes : minutes;
      var strSeconds = seconds < 10 ? "0" + seconds : seconds;
 
-    display.innerHTML = '<span class="clockDOM">'+ strMinutes + ":" + strSeconds+'<span>';
+
+    if (timer <=60){
+      display.innerHTML = '<span class="clockDOM redClock">'+ strMinutes + ":" + strSeconds+'<span>';
+    }else{
+      display.innerHTML = '<span class="clockDOM">'+ strMinutes + ":" + strSeconds+'<span>';
+      CounterClockwise();
+    }
+
+
     --timer;
   }, 1000);
   console.log("time works");
