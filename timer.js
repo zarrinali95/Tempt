@@ -28,15 +28,16 @@ function reset(){
   counter = document.getElementById("timer");
   current_minutes = num_min-1;
   seconds = 60;
+
 }
 
 function pause() {
+
   console.log("pause works")
   if (pauseBool==false){
     pauseBool=true;
     document.getElementById("resetButton").disabled = true;
-  }
-  else{
+  }else{
     pauseBool=false;
   }
   if (pauseBool==false){
