@@ -35,46 +35,45 @@ function pause() {
 }
 
 function disableStart() {
-    document.getElementById("startButton").disabled = true;
-
+  document.getElementById("startButton").disabled = true;
 }
 
 //our function
 /*function tick() {
-    if (pauseBool==true){
-      return true;
-    }
-     disableStart();
-     mins = document.getElementById('min');
-     num_min = Number(mins.value);
-     counter = document.getElementById("timer");
-     current_minutes = num_min-1;
-     console.log(seconds)
-     seconds--;
+if (pauseBool==true){
+return true;
+}
+disableStart();
+mins = document.getElementById('min');
+num_min = Number(mins.value);
+counter = document.getElementById("timer");
+current_minutes = num_min-1;
+console.log(seconds)
+seconds--;
 
-    //  counter.innerHTML.style.color="lightgreen";
-      counter.innerHTML ='<span class="clockDOM">'+current_minutes.toString()+ ":" +(seconds < 10 ? "0" : "") + String(seconds)+'</span>';
-        if( seconds > 0 ) {
-            setTimeout(tick, 1000);
-            console.log("chrome notifications");
-        } else {
-          if(mins >= 1){
- -         setTimeout(function () { countdown(mins - 1); }, 1000);
-            num_min-=1;
-            seconds = 59;
-            tick();
-          } else {
-              let options = {
-                type : "basic",
-                title: "Tempt",
-                message: "Your time for this session is up",
-                iconUrl: "images/get_started32.png"
-              }
-              chrome.notifications.create(options);
-              console.log("notification works")
-          }
+//  counter.innerHTML.style.color="lightgreen";
+counter.innerHTML ='<span class="clockDOM">'+current_minutes.toString()+ ":" +(seconds < 10 ? "0" : "") + String(seconds)+'</span>';
+if( seconds > 0 ) {
+setTimeout(tick, 1000);
+console.log("chrome notifications");
+} else {
+if(mins >= 1){
+-         setTimeout(function () { countdown(mins - 1); }, 1000);
+num_min-=1;
+seconds = 59;
+tick();
+} else {
+let options = {
+type : "basic",
+title: "Tempt",
+message: "Your time for this session is up",
+iconUrl: "images/get_started32.png"
+}
+chrome.notifications.create(options);
+console.log("notification works")
+}
 
-      }
+}
 }*/
 
 //working model function
@@ -84,30 +83,37 @@ function ticks(duration) {
   if (pauseBool==true){
     return true;
   }
-   disableStart(); //might need to put disable somewhere else
+  disableStart(); //might need to put disable somewhere else
 
-   var timer = getInputMinutes();
-   setInterval(function () {
-        var minutes = parseInt(timer / 60, 10);
-        var seconds = parseInt(timer % 60, 10);
-        var strMinutes = minutes < 10 ? "0" + minutes : minutes;
-        var strSeconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.innerHTML = '<span class="clockDOM">'+ strMinutes + ":" + strSeconds+'<span>';
-
-        if (--timer < 0) {
-            timer = 0;
+  var timer = getInputMinutes();
+    var timeInterval = setInterval(function () {
+      if (timer <= 0) {
+        timer = 0;
+        let options = {
+          type : "basic",
+          title: "Tempt",
+          message: "Your time for this session is up!",
+          iconUrl: "images/tempt48.png"
         }
-    }, 1000);
+        chrome.notifications.create(options);
+        clearInterval(timeInterval);
+     }
+     var minutes = parseInt(timer / 60, 10);
+     var seconds = parseInt(timer % 60, 10);
+     var strMinutes = minutes < 10 ? "0" + minutes : minutes;
+     var strSeconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.innerHTML = '<span class="clockDOM">'+ strMinutes + ":" + strSeconds+'<span>';
+    --timer;
+  }, 100);
+  console.log("time works");
+  console.log(timer);
 }
-
-
 //returns the seconds value of the number that the user inputs
 function getInputMinutes() {
   input = document.getElementById("min");
   return Number(input.value) * 60;
 }
-
 
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('startButton').addEventListener('click', () => ticks(userMinutes));
@@ -116,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
   num_min = Number(mins.value);
   var userMinutes = 60 * num_min;
   display = document.getElementById('timer');
-  // startTimer(userMinutes);
+  console.log(display.innerHTML);
 });
 
 //counter.innerHTML ='<span class="clockDOM">'+current_minutes.toString()+ ":" +(seconds < 10 ? "0" : "") + String(seconds)+'</span>';

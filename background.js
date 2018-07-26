@@ -9,7 +9,7 @@ chrome.runtime.onInstalled.addListener(function() {
     console.log("The color is green.");
   });
 
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+  /*chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
       chrome.declarativeContent.onPageChanged.addRules([{
         conditions: [
           new chrome.declarativeContent.PageStateMatcher({
@@ -42,5 +42,5 @@ chrome.runtime.onInstalled.addListener(function() {
         ],
           actions: [new chrome.declarativeContent.ShowPageAction()]
       }]);
-    });
+    });*/
 });
