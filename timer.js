@@ -105,7 +105,7 @@ function ticks(duration) {
 
     display.innerHTML = '<span class="clockDOM">'+ strMinutes + ":" + strSeconds+'<span>';
     --timer;
-  }, 100);
+  }, 1000);
   console.log("time works");
   console.log(timer);
 }
