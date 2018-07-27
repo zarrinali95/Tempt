@@ -122,9 +122,9 @@ function ticks(duration) {
 
 
     if (timer <=60){
-      display.innerHTML = '<span class="clockDOM redClock">'+ strMinutes + ":" + strSeconds+'<span>';
+      display.innerHTML = '<span class="clockDOM redClock"><center>'+ strMinutes + ":" + strSeconds+'</center></span>';
     }else{
-      display.innerHTML = '<span class="clockDOM">'+ strMinutes + ":" + strSeconds+'<span>';
+      display.innerHTML = '<span class="clockDOM"><center>'+ strMinutes + ":" + strSeconds+'</center></span>';
       Clockwise();
     }
 
