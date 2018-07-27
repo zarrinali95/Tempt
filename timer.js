@@ -127,7 +127,7 @@ function ticks(duration) {
       display.innerHTML = '<span class="clockDOM"><center>'+ strMinutes + ":" + strSeconds+'</center></span>';
       Clockwise();
     }
-
+ 
 
 
 
