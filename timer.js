@@ -121,10 +121,9 @@ function ticks(duration) {
       display.innerHTML = '<span class="clockDOM redClock">'+ strMinutes + ":" + strSeconds+'<span>';
     }else{
       display.innerHTML = '<span class="clockDOM">'+ strMinutes + ":" + strSeconds+'<span>';
+      Clockwise();
     }
-    if(minutes%2==0){
-      changeRotation;
-    }
+
 
 
     --timer;
