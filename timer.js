@@ -5,17 +5,21 @@ var seconds = 60;
 var pauseBool = false;
 var pressOnce=false;
 
+
 function Clockwise(){
   document.getElementById("temptLogo").classList.add("spinClockwise");
+
   console.log("clockwise");
 }
 function CounterClockwise(){
   document.getElementById("temptLogo").classList.add("spinCounterClockwise");
   console.log("Counter clockwise");
+
 }
 function changeRotation(){
   document.getElementsByID("temptLogo").classList.toggle("spinCounterClockwise");
   console.log("Counter clockwise");
+
 }
 
 function textReset(){
@@ -123,6 +127,7 @@ function ticks(duration) {
       display.innerHTML = '<span class="clockDOM">'+ strMinutes + ":" + strSeconds+'<span>';
       Clockwise();
     }
+
 
 
 
